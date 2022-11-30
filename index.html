@@ -719,26 +719,38 @@
         </div>
       </div>
 
-      <form action="forms/contact.php" method="post" role="form" class="php-email-form mt-4">
+
+      <form action="https://formsubmit.co/b581dc0065d9d9e15b0d40a31518d5bd" method="POST">
+        <input type="hidden" name="_subject" value="New email woooo!">
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="hidden" name="_next" value="https://vinithkumar.tk">
+        <input type="text" name="message" placeholder="write your message here" required>
+        <button type="submit">Send</button>
+      </form>
+
+
+        <form action="https://formsubmit.co/b581dc0065d9d9e15b0d40a31518d5bd" method="post" role="form" class="php-email-form mt-4">
+          <input type="hidden" name="_subject" value="New email from vinithkumar.tk!">
+          <input type="hidden" name="_next" value="https://vinithkumar.tk?email_status=success">
         <div class="row">
           <div class="col-md-6 form-group">
-            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+            <input type="text" name="Name" class="form-control" id="name" placeholder="Your Name" required>
           </div>
           <div class="col-md-6 form-group mt-3 mt-md-0">
-            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+            <input type="email" class="form-control" name="Email" id="email" placeholder="Your Email" required>
           </div>
         </div>
         <div class="form-group mt-3">
-          <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+          <input type="text" class="form-control" name="Subject" id="subject" placeholder="Subject" required>
         </div>
         <div class="form-group mt-3">
-          <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+          <textarea class="form-control" name="Message" rows="5" placeholder="Message" required></textarea>
         </div>
-        <div class="my-3">
-          <div class="loading">Loading</div>
-          <div class="error-message"></div>
-          <div class="sent-message">Your message has been sent. Thank you!</div>
-        </div>
+<!--        <div class="my-3">-->
+<!--          <div class="loading">Loading</div>-->
+<!--          <div class="error-message"></div>-->
+<!--          <div class="sent-message">Your message has been sent. Thank you!</div>-->
+<!--        </div>-->
         <div class="text-center"><button type="submit">Send Message</button></div>
       </form>
 
@@ -762,6 +774,15 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
+<script>
+  var url_string = window.location.href;
+  var url = new URL(url_string);
+  var c = url.searchParams.get("email_status");
+  if (url.searchParams.get("email_status") === "success"){
+    alert('Your Email dropped to the Administrator');
+  }
+  console.log(c);
+</script>
 </body>
 
 </html>
